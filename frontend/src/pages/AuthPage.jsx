@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function AuthPage() {
   const [isLogin, setIsLogin] = useState(true);
@@ -14,6 +15,8 @@ export default function AuthPage() {
   const [regTelefono, setRegTelefono] = useState('');
   const [regPassword, setRegPassword] = useState('');
   const [regConfirmPassword, setRegConfirmPassword] = useState('');
+
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -38,7 +41,7 @@ export default function AuthPage() {
 
       localStorage.setItem('token', data.token);
       alert('Login exitoso');
-      // Aquí puedes redirigir a dashboard o página principal
+      navigate('/dashboard');  // Redirige al dashboard después del login
     } catch (error) {
       alert(error.message);
     }
