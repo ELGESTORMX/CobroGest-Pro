@@ -1,8 +1,8 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Backend API para el proyecto",
+  "main": "server.js",
   "type": "commonjs",
   "scripts": {
     "start": "node server.js",
